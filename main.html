@@ -1,0 +1,128 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+    <div id="menu">
+        <p>Knife</p>
+        
+    </div>
+    <div id="menu1">
+        <p>2.Пистолеты</p>
+        <ul id="sub1">
+            <li>2.1 Glock 18</li>
+            <li>2.2 HK USP .45 Tactical</li>
+            <li>2.3 SIG-Sauer P228</li>
+            <li>2.4 IMI Desert Eagle .50AE</li>
+            <li>2.5 FN Five-Seven</li>
+            <li>2.6 Beretta 92G Elite II, 2 шт</li>
+        </ul>
+    </div>
+    <div id="menu2">
+        <p>3.Дробовики</p>
+        <ul id="sub2">
+            <li>3.1 Benelli M3 Super 90</li>
+            <li>3.2 Benelli XM1014</li>
+        </ul>
+    </div>
+    <div id="menu3">
+        <p>4 Пистолеты-пулемёты</p>
+        <ul id="sub3">
+            <li>4.1 Ingram MAC-10</li>
+            <li>4.2 Steyr TMP</li>
+            <li>4.3 HK MP5 Navy</li>
+            <li>4.4 HK UMP 45</li>
+            <li>4.5 FN P90</li>
+        </ul>
+    </div>
+    <div id="menu4">
+        <p>5 Штурмовые винтовки</p>
+        <ul id="sub4">
+            <li> 5.1 FAMAS</li>
+            <li>5.2 IMI Galil ARM</li>
+            <li>5.3 Colt M4A1</li>
+            <li>5.4 AK-47</li>
+            <li>5.5 Steyr AUG</li>
+            <li>5.6 SG-552</li>
+        </ul>
+    </div>
+    <div id="menu5">
+        <p>6 Снайперские винтовки</p>
+        <ul id="sub5">
+            <li>6.1 Arctic Warfare Police (AWP)</li>
+            <li>6.2 SG-550 Sniper Rifle</li>
+            <li>6.3 G3/SG-1 Sniper Rifle</li>
+            <li>6.4 Steyr Scout</li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        $('ul').slideUp(0);
+        
+       // $('#menu1').click(function () {
+         //   $('#sub1').slideToggle(300);
+       // });
+        
+        //$('#menu2').click(function () {
+     //       $('#sub2').slideToggle(300);
+       // });
+        
+       // $('#menu3').click(function () {
+        //    $('#sub3').slideToggle(300);
+        //});
+        
+        //$('#menu4').click(function () {
+        //    $('#sub4').slideToggle(300);
+        //});
+        
+      //  $('#menu5').click(function () {
+        //    $('#sub5').slideToggle(300);
+       // });
+
+
+        var img = []
+        var div = $('<div>')
+        $('body').append(div);
+
+
+        for (var i = 0; i < 9; i++) {
+            img[i] = $('<img>');
+            $(img[i]).attr("src", "img/0" + (i + 1) + ".png");
+            $(div).append(img[i])
+        }
+        $('img').click(
+            function () {
+                $("img").animate({
+                    "paddingLeft": "0px",
+                    "paddingRight": "0px",
+                    "width": "64px",
+                });
+                $(this).animate({
+                    "paddingLeft": "64px",
+                    "paddingRight": "64px",
+                    "width": "128px",
+                });
+            });
+
+        $('img').click(function () {
+            $(this).animate({
+
+                "width": "+=64px",
+            },
+                parseInt($(this).css("with")));
+        });
+        $('body').css("background-color", "#f44259");
+        $('ul').click(function(event){
+            $('ul').slideUp();
+            $(this).slideDown();
+           
+
+        });
+    </script>
+
+ 
+</body>
+</html>
